@@ -1,0 +1,61 @@
+Mihaila Cosmin-Constantin 315CB
+Punctaj:
+	Total: [85/85]
+	Bonus: [20/20]
+
+1. set_band -> Doar se actualizeaza valoarea variabieli bandiwth.
+
+2. newtab -> Se initalizeaza o noua celula pentru lista  de taburi si se muta
+current_tab pentru a fi ultimul tab adaugat.
+
+3. deltab -> Se sterge ultimul element din lista de taburi. Daca tabul curent
+era ultimul, atunci se muta tabul curent.
+
+4. change_tab -> Se muta tabul curent pana la tab_index.
+
+5. print_open_tabs -> Se parcurge lista de taburi, si se afiseaza url-ul
+paginii curente daca exista, altfel se afiseaza empty.
+
+6. goto -> Se apeleaza o data functia wait pentru simularea trecerii 
+timpului. De asemenea se initalizeaza o noua pagina cu url-ul primit.
+Daca tab-ul curent contine deja o pagina, aceasta este introdusa in stiva
+back_stack. Se seteaza noua pagina initializata ca find cea curenta.
+De asemenea se copiaza url-ul primit pentru a-l adauga in coada istoricului.
+
+7. back -> Scoatem o pagina din back_stack ( daca nu este goala stiva). Pagina
+curenta o punem in stiva forward_stack si setam ca find pagina curenta pagina
+scoasa anterior din back_stack.
+
+8. forward -> Scoatem o pagina din forward_stack ( daca nu este goala stiva).
+Pagina curenta o punem in stiva back_stack si setam ca find pagina curenta 
+pagina scoasa anterior din forward_stack.
+
+9. history -> Scoatem pe rand fiecare url din coada history, il afisam 
+si il introducem intr-o coada auxiliara. Dupa care reintrducem url-urile
+din coada aux in coada history.
+
+10. del_history -> Extragem url-urile din coada history, in functie de
+numarul primit. Dupa care eliberam memoria url-ului. (Daca numarul primit
+este egal cu 0, le extragem pe toate).
+
+11. list_dl -> Parcurgem vectorul de resurse de pe pagina respectiva si
+il afisam.
+
+12. downloads -> Extragem fiecare element din coada de descarcari, il afisam,
+dupa care il introducem intr-o coada auxiliara. Dupa care reintroducem
+elementele din coada aux in coada priorty. Dupa ce afisam toate resursele din
+coada de descarcare, afisam si resursele din lista de descarcari compelte.
+
+13. downlaod -> Introducem resursa primita ca parametru in coada de descarcare
+cu ajutorul functiei IntrQPriority. In aceasta functie parcurgem coada
+priority, si in functie de dimensiunea ramasa de descarcat, includem noua
+resursa in coada.
+
+14. wait -> Aceasta functie scoate fiecare element din coada priority.
+Daca elementul este primul din coada, ii creste currently_download in functie
+de bandwith( sau dupa caz, in functie de memoria de descarcare ramasa).
+Daca resursa s-a descarcat complet, calculeaza cata memorie de descarcare a mai
+ramas, dupa care adauga resursa in lsita de descarcari complete. In cazul in
+care resursa nu s-a descarcat complet, pune resursa in coada aux. Dupa care
+reintroduce resursele din coada aux in coada priorty.
+
